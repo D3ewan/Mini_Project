@@ -2,6 +2,8 @@ import React, { startTransition, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { loadProducts } from '../../redux/slices/productSlice';
 import { CiHospital1 } from 'react-icons/ci';
+import SingleProduct from '../singleProduct/SingleProduct';
+import './ProductList.css'
 
 function ProductList() {
     // const selector = useSelector();
@@ -18,9 +20,9 @@ function ProductList() {
 
     }, [])
     return (
-        <div>{products.map(x => <h1>{x.title}</h1>)}
+        <div className='ProductList'>{products.map(x => <SingleProduct product={x} />)}
         </div>
     )
 }
 
-export default ProductList
+export default ProductList;

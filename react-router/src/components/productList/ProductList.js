@@ -20,7 +20,7 @@ function ProductList() {
 
     }, [])
     return (
-        <div className='ProductList'>{products.map(x => <SingleProduct product={x} />)}
+        <div className='ProductList'>{products.map(x => <SingleProduct key={x.id} product={x} />)}
         </div>
     )
 }
